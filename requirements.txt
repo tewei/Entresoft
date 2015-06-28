@@ -1,3 +1,4 @@
 Mezzanine==3.1.10
 dj-database-url==0.3.0
 django-postgrespool==0.3.0
+whitenoise==2.0
