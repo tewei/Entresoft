@@ -165,23 +165,12 @@ NEVERCACHE_KEY = "4a6b6c4e-e0fc-43b1-ac1c-9c1579865e50cdc22da0-9818-4f8c-80f7-b3
 # DATABASES #
 #############
 
-DATABASES = {
-    "default": {
-        # Add "postgresql_psycopg2", "mysql", "sqlite3" or "oracle".
-        "ENGINE": "django.db.backends.",
-        # DB name or path to database file if using sqlite3.
-        "NAME": "",
-        # Not used with sqlite3.
-        "USER": "",
-        # Not used with sqlite3.
-        "PASSWORD": "",
-        # Set to empty string for localhost. Not used with sqlite3.
-        "HOST": "",
-        # Set to empty string for default. Not used with sqlite3.
-        "PORT": "",
-    }
-}
 
+#For Heroku
+import dj_database_url
+DATABASES = {}
+DATABASES['default'] =  dj_database_url.config()
+DATABASES['default']['ENGINE'] = 'django_postgrespool'
 
 #########
 # PATHS #
