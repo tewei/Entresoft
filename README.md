@@ -2,6 +2,8 @@
 
 ##Mezzanine
 Install [Mezzanine](http://mezzanine.jupo.org/), a Django based CMS.
+####修改template(特別是首頁)
+`$ python manage.py collecttemplates`
 
 ##Heroku
 
