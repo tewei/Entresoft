@@ -237,7 +237,7 @@ INSTALLED_APPS = (
     "django.contrib.contenttypes",
     "django.contrib.redirects",
     "django.contrib.sessions",
-    "django.contrib.sites",
+    #"django.contrib.sites",
     "django.contrib.sitemaps",
     "django.contrib.staticfiles",
     "mezzanine.boot",
