@@ -2,9 +2,6 @@
 
 {% load mezzanine_tags %}
 
-{% block left_wrapper %}
-{% endblock %}
-<div class="col-md-{% block main_col_size %}8{% endblock %}">
 {% block main %}
 {{ block.super }}
 {% if request.GET.sent %}
@@ -29,7 +26,6 @@
 {% endif %}
 
 {% endblock %}
-</div>
 
 
 {% block extra_js %}
