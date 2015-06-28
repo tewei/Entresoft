@@ -6,7 +6,7 @@ Install [Mezzanine](http://mezzanine.jupo.org/), a Django based CMS.
 ##Heroku
 
 ###requirements.txt
-`$ heroku push`的時候自動安裝的套件
+`$ git push heroku`的時候自動安裝的套件
 ```
 dj-database-url==0.3.0
 django-postgrespool==0.3.0
@@ -31,3 +31,13 @@ DATABASES['default'] =  dj_database_url.config()
 DATABASES['default']['ENGINE'] = 'django_postgrespool'
 ```
 [Instructions](https://devcenter.heroku.com/articles/django-app-configuration#migrating-an-existing-django-project)
+###Migrate Database
+####土法煉鋼
+```
+$ python manage.py dumpdata > temp.json
+$ git add -A
+$ git commit -m "xD"
+$ git push
+$ git push heroku
+$ heroku run python manage.py loaddata temp.json
+```
