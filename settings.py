@@ -199,15 +199,6 @@ STATIC_URL = "/static/"
 # Example: "/home/media/media.lawrence.com/static/"
 STATIC_ROOT = os.path.join(PROJECT_ROOT, STATIC_URL.strip("/"))
 
-#Settings for Heroku
-#BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-#STATIC_ROOT = 'staticfiles'
-#STATIC_URL = '/static/'
-
-# STATICFILES_DIRS = (
-#     os.path.join(PROJECT_ROOT, 'static'),
-# )
-#STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
 # Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
@@ -224,7 +215,11 @@ ROOT_URLCONF = "%s.urls" % PROJECT_DIRNAME
 # or "C:/www/django/templates".
 # Always use forward slashes, even on Windows.
 # Don't forget to use absolute paths, not relative paths.
-TEMPLATE_DIRS = (os.path.join(PROJECT_ROOT, "templates"),)
+
+TEMPLATE_DIRS = (
+    os.path.join(PROJECT_ROOT, "moderna/templates"),
+    os.path.join(PROJECT_ROOT, "templates"),
+)
 
 
 ################
@@ -232,6 +227,7 @@ TEMPLATE_DIRS = (os.path.join(PROJECT_ROOT, "templates"),)
 ################
 
 INSTALLED_APPS = (
+    "moderna",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
