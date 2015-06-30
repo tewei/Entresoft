@@ -2,8 +2,26 @@
 
 ##Mezzanine
 Install [Mezzanine](http://mezzanine.jupo.org/), a Django based CMS.
-####修改template(特別是首頁)
-`$ python manage.py collecttemplates`
+####Install and Edit Theme
+因為每次Deploy會重新collectstatic，直接改static裡面的檔案會被覆蓋
+所以正確安裝Theme的方法是把它下載下來放到根目錄裡，在settings.py中修改
+(以[moderna](http://thecodinghouse.in/demo/moderna/)為例)
+```
+TEMPLATE_DIRS = (
+  os.path.join(PROJECT_ROOT, "moderna/templates"),
+  os.path.join(PROJECT_ROOT, "templates"),
+)
+```
+以及
+```
+INSTALLED_APPS = (
+  "moderna",
+  ...
+)
+```
+之後直接修改moderna資料夾裡面的template就可以編輯它了
+[Instruction](http://stackoverflow.com/questions/28024595/how-to-deploy-installing-mezzanine-theme)
+
 
 ##Heroku
 
